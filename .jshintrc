@@ -19,11 +19,13 @@
     "trailing": true,
     "smarttabs": true,
     "jquery": true,
+    "fastclick": true,
     "globals": {
         "Hackday": true,
         "hackday": true,
         "_": false,
         "Backbone": false,
+        "FastClick": true,
         "JST": false,
         "beforeEach": false,
         "describe": false,

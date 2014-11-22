@@ -1,0 +1,137 @@
+/* adjust body when menu is open */
+body.slide-active {
+    overflow-x: hidden;
+}
+
+/*first child of #page-content so it doesn't shift around*/
+.no-margin-top {
+    margin-top: 0px !important;
+}
+
+.navbar {
+    margin-top: 25px;
+}
+
+/*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
+#page-content {
+    padding-top: 50px;
+    left: 0;
+    &.slide-active {
+        padding-top: 0;
+    }
+}
+
+#slide-nav {
+    margin-bottom: 0;
+    .navbar-toggle {
+        cursor: pointer;
+        position: relative;
+        line-height: 0;
+        float: left;
+        margin: 0;
+        width: 30px;
+        height: 40px;
+        padding: 10px 0 0 0;
+        border: 0;
+        background: transparent;
+        > .icon-bar {
+            width: 100%;
+            display: block;
+            height: 3px;
+            margin: 5px 0 0 0;
+            background-color: black;
+        }
+        &.slide-active .icon-bar {
+            background: orange;
+        }
+    }
+}
+
+.navbar-header, .navbar.navbar-fixed-top.slide-active {
+    position: relative;
+}
+
+/* un fix the navbar when active so that all the menu items are accessible */
+/* screw writing importants and shit, just stick it in max width since these classes are not shared between sizes */
+@media (max-width: 767px) {
+    #slide-nav {
+        .container {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .navbar-header {
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .navbar.slide-active {
+            position: absolute;
+            width: 80%;
+            top: -1px;
+            z-index: 1000;
+        }
+        #slidemenu {
+            background: #f7f7f7;
+            left: -100%;
+            width: 80%;
+            min-width: 0;
+            position: absolute;
+            padding-left: 0;
+            z-index: 2;
+            top: -8px;
+            margin: 50px 0 0 0;
+            .navbar-nav {
+                min-width: 0;
+                width: 100%;
+                margin: 0;
+                .dropdown-menu li a {
+                    min-width: 0;
+                    width: 80%;
+                    white-space: normal;
+                }
+            }
+            height: 100vh;
+        }
+        border-top: 0;
+        &.navbar-inverse #slidemenu {
+            background: #333;
+        }
+        #navbar-height-col {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 80%;
+            left: -80%;
+            background: #eee;
+        }
+        &.navbar-inverse #navbar-height-col {
+            background: #333;
+            z-index: 1;
+            border: 0;
+        }
+        .navbar-form {
+            width: 100%;
+            margin: 8px 0;
+            text-align: center;
+            overflow: hidden;
+            /*fast clearfixer*/
+            .form-control {
+                text-align: center;
+            }
+            .btn {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    #page-content {
+        left: 0 !important;
+    }
+    .navbar.navbar-fixed-top.slide-active {
+        position: fixed;
+    }
+    .navbar-header {
+        left: 0 !important;
+    }
+}
