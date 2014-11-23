@@ -19,12 +19,10 @@ var Router = Backbone.Router.extend({
         console.log("Router: explore");
 
         estimote.onUpdate = function(beacons){
-            console.log(beacons);
-
             var model = [];
             $.each(beacons, function(index, beacon){
-                console.log(beacon.distance);
                 if(beacon.distance != undefined){
+                    beacon.distance = (Number(beacon.distance) * 3.28).toFixed(1);
                     model.push(beacon);
                 }
             });
@@ -39,6 +37,11 @@ var Router = Backbone.Router.extend({
 
     create: function(){
         console.log("Router: create");
+        estimote.onUpdate = function(){};
+
+        var template = JST['app/scripts/templates/selectContent.hbs'];
+
+        $('#main').html(template());
     },
 
     profile: function(){
@@ -78,7 +81,7 @@ var Router = Backbone.Router.extend({
     showList: function(model){
         var template = JST['app/scripts/templates/list.hbs'];
 
-        $('#main').html(template(model));  
+        $('#main').html(template({beacons:model}));  
     }
 
 });

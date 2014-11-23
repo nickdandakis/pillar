@@ -1,9 +1,12 @@
-$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$fa-font-path: "../bower_components/fontawesome/fonts";
 
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
+@import 'fontawesome/scss/font-awesome.scss';
 @import 'typography.scss';
 @import 'navigation.scss';
 @import 'explore.scss';
+@import 'create.scss';
 
 .browsehappy {
     margin: 0.2em 0;
@@ -25,6 +28,7 @@ body {
         overflow-y: scroll;
         height: 100%;
         padding-bottom: 80px; 
+        overflow-x: hidden;
     }
 }
 

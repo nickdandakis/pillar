@@ -16,7 +16,7 @@ body.slide-active {
 
 /*wrap the entire page content but not nav inside this div if not a fixed top, don't add any top padding */
 #content {
-    padding-top: 50px;
+    padding-top: 55px;
     left: 0;
     &.slide-active {
         padding-top: 0;
@@ -86,7 +86,7 @@ body.slide-active {
             position: absolute;
             padding-left: 0;
             z-index: 2;
-            top: -8px;
+            top: 0px;
             margin: 50px 0 0 0;
             .navbar-nav {
                 min-width: 0;
