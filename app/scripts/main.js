@@ -15,18 +15,23 @@ window.Hackday = {
 
         // TODO: Prevent elastic scrolling 
 
-         //stick in the fixed 100% height behind the navbar but don't wrap it
-        $('#slide-nav.navbar .container').append($('<div id="navbar-height-col"></div>'));
+        // Start Backbone history a necessary step for bookmarkable URL's
+        Backbone.history.start({
+            root: '/hackday/dist/'
+        });
 
         // Enter your ids or classes
         var toggler = '.navbar-toggle';
         var pagewrapper = '#content';
         var navigationwrapper = '.navbar-header';
         var menuwidth = '100%'; // the menu inside the slide menu itself
-        var slidewidth = '80%';
+        var slidewidth = '50%';
         var menuneg = '-100%';
-        var slideneg = '-80%';
+        var slideneg = '-50%';
 
+        var fillHeight = document.height - 50;
+        $('#slidemenu').attr('style', 'height: '+fillHeight+'px');
+        
         $("#slide-nav").on("click", toggler, function (e) {
             var selected = $(this).hasClass('slide-active');
 
@@ -39,10 +44,6 @@ window.Hackday = {
             });
 
             $(pagewrapper).stop().animate({
-                left: selected ? '0px' : slidewidth
-            });
-
-            $(navigationwrapper).stop().animate({
                 left: selected ? '0px' : slidewidth
             });
 
