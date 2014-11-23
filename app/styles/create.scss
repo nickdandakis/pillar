@@ -8,10 +8,136 @@
 
 	span {
 		color: white;
-		font-size: 7em;
+		font-size: 6em;
 
 		&:hover, &:active {
 			color: $accent;
+		}
+	}
+
+	textarea {
+		left: 15px;
+		right: 15px;
+		position: fixed;
+		top: 85px;
+		bottom: 65px;
+		border-radius: 0;
+		border: none;
+		font-size: 18px;
+		padding: 15px;
+
+		&:focus {
+			margin-top: 30px;
+		}
+	}
+
+	.upload-button {
+		height: 50px;
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		background-color: white;
+		color: $dark;
+		font-size: 24px;
+		border: none;
+	}
+
+	#content-selection {
+		margin-top: 5%;
+
+		.row {
+			margin-top: 20%;
+
+			.circle {
+				width: 120px;
+				height: 120px;
+				background-color: $light;
+				text-align: center;
+				position: static;
+				line-height: 160px;
+				margin-top: 0;
+				font-size: 12px;
+
+				&#audio {
+					line-height: 175px;
+				}
+
+				&#camera {
+					line-height: 165px;
+				}
+
+				&:active, &:hover {
+					border: 3px solid white;
+				}
+			}
+		}
+	}
+}
+
+#recognize {
+	background-color: $block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	.circle {
+		width: 260px;
+		height: 260px;
+		background-color: none;
+		border: 3px dashed white;
+		text-align: center;
+		position: static;
+		margin-top: -110px;
+	}
+}
+
+#register {
+	background-color: $lightest;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+	.row {
+		margin-top: 15%;
+	}
+
+	h1 {
+		background-color: $dark;
+		color: white;
+		font-size: 20px;
+		margin-bottom: 0;
+	}
+
+	label {
+		font-size: 20px;
+	}
+
+	form {
+		background-color: white;
+		border-bottom: 3px solid $block;
+
+		div {
+			padding: 15px 5px 15px 5px;  
+			border-bottom: 1px solid $lightest;
+		}
+
+		#name-textfield {
+			border: none;
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+
+		#trigger-distance-slider {
+			background-color: $block;
+			height: 6px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
+		#register-pillar-button {
+			width: 100%;
+			height: 50px;
+			border: none;
 		}
 	}
 }

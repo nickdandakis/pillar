@@ -1,0 +1,20 @@
+<div id="register">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<h1>REGISTER PILLAR</h1>
+			<form>
+				<input type="hidden" name="major" value="{{major}}" />
+				<input type="hidden" name="minor" value="{{minor}}" />
+				<div>
+					<label for="name-textfield">NAME: </label>
+					<input type="text" name="name" id="name-textfield" />
+				</div>
+				<div>
+					<label for="trigger-distance-slider">TRIGGER DISTANCE</label>
+					<input type="range" min="0" value="10" max="200" step="1" name="trigger-distance" id="trigger-distance-slider" />
+				</div>
+				<input type="submit" value="DONE" id="register-pillar-button" />
+			</form>
+		</div>
+	</div>
+</div>

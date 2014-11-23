@@ -1,66 +1,25 @@
 @import 'colors.scss';
 
-#explore {
-	background-color: $block;
+#scanner, #list {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+}
+
+#scanner {
+	background-color: $block;
+	text-align: center;
+}
+
+#list {
+	background-color: $lightest;
 }
 
 .circle {
 	border-radius: 50%;
 	position: relative;
 	margin-left: auto;
-	margin-right: auto;
-	margin-top: 30%;
-
-	&#first {
-		width: 30px;
-		height: 30px;
-		background-color: $light;
-		z-index: 999;
-	}
-
-	&#second, &#third, &#fourth, &#fifth, &#sixth {
-		background-color: white;
-		opacity: 0.3;
-		position: absolute;
-	}	
-
-	&#second {
-		width: 60px;
-		height: 60px;
-		left: -15px;
-		top: -30px;
-	}
-
-	&#third {
-		width: 90px;
-		height: 90px;
-		left: -30px;
-		top: -45px;
-	}
-
-	&#fourth {
-		width: 120px;
-		height: 120px;
-		left: -45px;
-		top: -60px;
-	}
-
-	&#fifth {
-		width: 150px;
-		height: 150px;
-		left: -60px;
-		top: -75px;	
-	}
-
-	&#sixth {
-		width: 180px;
-		height: 180px;
-		left: -75px;
-		top: -90px;	
-	}	
+	margin-right: auto;	
 }
 
 table {
@@ -70,6 +29,10 @@ table {
 		line-height: 90px;
 		background-color: $lightest;
 		border-bottom: 3px solid white;
+
+		&:hover, &:active {
+			background-color: white;
+		}
 
 		.distance {
 			text-align: center;
