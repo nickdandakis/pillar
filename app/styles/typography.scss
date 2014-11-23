@@ -1,0 +1,12 @@
+@import 'colors.scss';
+
+h1 {
+	background-color: white;
+	color: $light;
+	text-align: center;
+	padding: 20px;
+}
+
+.section-header {
+	position: relative;
+}
